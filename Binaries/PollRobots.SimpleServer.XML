@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PollRobots.SimpleServer</name>
+    </assembly>
+    <members>
+        <member name="T:PollRobots.SimpleServer.Server">
+            <summary>Implements a simple http server serving files under a
+            particular directory.</summary>
+        </member>
+        <member name="F:PollRobots.SimpleServer.Server.tokenSource">
+            <summary>Used to stop the server.</summary>
+        </member>
+        <member name="M:PollRobots.SimpleServer.Server.#ctor(System.Int32,System.String,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:PollRobots.SimpleServer.Server"/>
+            class.</summary>
+            <param name="port">The port number to listen on.</param>
+            <param name="root">The root from which files will be served.</param>
+            <param name="directoryListings">Indicates whether directory listings
+            will be generated.</param>
+        </member>
+        <member name="M:PollRobots.SimpleServer.Server.Start">
+            <summary>Starts listening.</summary>
+            <returns>The task representing the running server.</returns>
+        </member>
+        <member name="M:PollRobots.SimpleServer.Server.Stop">
+            <summary>Stops the server.</summary>
+        </member>
+        <member name="M:PollRobots.SimpleServer.Server.Dispose">
+            <summary>Disposes this server instance.</summary>
+        </member>
+        <member name="M:PollRobots.SimpleServer.Server.RunListener(System.Threading.CancellationToken)">
+            <summary>Runs the <see cref="T:System.Net.HttpListener"/> waiting for requests.</summary>
+            <param name="cancel">The cancellation token used to signal stopping the server.</param>
+            <returns>The task objecct.</returns>
+        </member>
+        <member name="M:PollRobots.SimpleServer.Server.ServeRequest(System.Net.HttpListenerContext)">
+            <summary>Serves an individual file request.</summary>
+            <param name="context">The context for the request.</param>
+            <returns>An async task.</returns>
+        </member>
+        <member name="P:PollRobots.SimpleServer.Server.Port">
+            <summary>Gets the port number to listen on.</summary>
+        </member>
+        <member name="P:PollRobots.SimpleServer.Server.Root">
+            <summary>Gets the root directory from which files are served.</summary>
+        </member>
+        <member name="P:PollRobots.SimpleServer.Server.DirectoryListings">
+            <summary>Gets a value indicating whether directory listings will be
+            generated.</summary>
+        </member>
+        <member name="P:PollRobots.SimpleServer.Server.IsStarted">
+            <summary>Gets a value indicating whether the server has been started.</summary>
+        </member>
+    </members>
+</doc>
