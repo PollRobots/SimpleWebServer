@@ -152,6 +152,14 @@ namespace PollRobots.SimpleServer
                     context.Request.Url.AbsolutePath);
                 context.Response.StatusCode = 403;
             }
+            else if (context.Request.HttpMethod != "GET")
+            {
+                Trace.TraceWarning(
+                    "Forbidden to use method {0} '{1}'",
+                    context.Request.HttpMethod,
+                    context.Request.Url.AbsolutePath);
+                context.Response.StatusCode = 403;
+            }
             else if (File.Exists(path))
             {
                 var contentType = MimeMapping.GetMimeMapping(path);
